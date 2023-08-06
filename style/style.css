@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
+
+:root {
+    --header-root-color: #4111a8;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    flex-direction: column;
+    grid-template-rows: auto 1fr min-content;
+    background-color: #fff;
+    margin: auto;
+    font-family: Roboto, sans-serif;
+}
+
+main {
+    grid-area: 2 / 1 / span 1 / span 2;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    grid-area: 1 / 1 / span 1 / span 2;
+    background-color: var(--header-root-color);
+    padding: 1em;
+}
+
+header h1, header h2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+header > a:nth-child(2) {
+    margin-left: auto;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header h1 {
+    font-family: Oswald, sans-serif;
+    font-size: 3rem;
+}
+
+header h2 {
+    font-family: Roboto, sans-serif;
+    border-radius: 0.5rem;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    margin-left: 1em;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-dropdown img {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    margin-right: 1em;
+    margin-left: 2em;
+    cursor: pointer;
+}
+
+.profile-dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 3.5em;
+    right: 0;
+    min-width: 8em;
+    box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.2);
+    background-color: var(--box-color);
+    padding: 0.5em 1em;
+    border-radius: 1em;
+}
+
+.profile-dropdown-content button {
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+}
+
+.profile-dropdown-content a, .profile-dropdown-content button {
+    display: block;
+    color: var(--text-color);
+    font-size: .9rem;
+    padding: 1em;
+    border-radius: 1em;
+    text-decoration: none;
+}
+
+.profile-dropdown-content a:hover, .profile-dropdown-content button:hover {
+    background-color: var(--ticket-box-color);
+    color: var(--text-color-2);
+}
+
+/* Tickets */
+section#tickets {
+    margin: 0 auto;
+    grid-column: 1 / span 2;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: auto min-content;
+    grid-template-rows: min-content min-content  min-content auto;
+    width: 85em;
+}
+
+section#tickets > a {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    text-decoration: none;
+    color: white;
+    background-color: var(--header-root-color);
+    margin: 1em;
+    width: fit-content;
+    padding: 0.7em;
+    font-weight: bolder;
+    border-radius: 10px;
+    justify-self: end;
+}
+
+section#tickets #searchticket {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    height: 1.5em;
+    margin-right: 0.5em;
+    padding: 0.5em 0.5em 0.5em 1em;
+    border: none;
+    border-bottom: solid 3px var(--header-root-color);
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.071);
+    background-color: var(--ticket-box-color);
+    font-weight: bold;
+    font-size: large;
+    outline: none;
+    color: #5e5e5e;
+}
+
+section#tickets img {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    align-self: center;
+    width: 2.5em;
+    padding: 0;
+    filter: invert(15%) sepia(42%) saturate(3731%) hue-rotate(247deg) brightness(114%) contrast(128%);
+    cursor: pointer;
+}
+
+div#tags {
+    grid-row: 2 / span 1;
+    display: grid;
+    grid-template-rows: auto min-content;
+    grid-template-columns: min-content min-content auto;
+}
+
+div#tags input {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    display: inline-block;
+    background-color: var(--box-color);
+    height: 2.5em;
+    padding: .2em .5em;
+    margin: .2em;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    min-width: 0;
+}
+
+div#tags img {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    cursor: pointer;
+    width: 1.5em;
+    margin-left: 0.5em;
+    align-self: center;
+    filter: invert(15%) sepia(42%) saturate(3731%) hue-rotate(247deg) brightness(114%) contrast(128%);
+}
+
+div#tags ul {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 3;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+div#tags ul > li {
+    cursor: pointer;
+}
+
+.tag {
+    background-color: var(--box-color);
+    color: var(--text-color-2);
+    padding: .2em .5em;
+    margin: .2em;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.tag::before {
+    content: '#';
+}
+
+#search_filters {
+    grid-row: 3 / span 1;
+    margin-bottom: 2em;
+    overflow: hidden;
+    max-height: 0;
+}
+
+#search_filters.show {
+    max-height: fit-content;
+}
+
+#search_filters #tags {
+    margin-left: 1em;
+    margin-top: 0.5em;
+}
+
+#search_filters label {
+    white-space: nowrap;
+    display: inline-block;
+    color: var(--text-color-2);
+    text-align: right;
+    padding: 0 1em;
+}
+
+#search_filters select, #search_filters input {
+    width: 10em;
+    height: fit-content;
+    padding: 0.5em;
+    margin: 1em 0;
+    background-color: var(--box-color);
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+}
+
+@media (max-width: 89em) {
+    section#tickets {
+        width: 95%;
+    }
+}
+
+#previews {
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticketpreview {
+    height: min-content;
+    margin-bottom: 1em;
+    background-color: var(--ticket-box-color);
+    border-radius: 6px;
+    padding: 1.2em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.071);
+    text-decoration: none;
+}
+
+.ticketpreview h3 {
+    color:black;
+    font-size: 1.2rem;
+    margin: 0 0 .8em;
+}
+
+.ticketpreview p {
+    margin: 0;
+    color: black;
+    font-size: .95rem;
+}
+
+.ticketpreview p:nth-child(2) {
+    color: rgb(0, 0, 0);
+    margin-bottom: .5em;
+}
+
+.ticketpreview time, .ticketpreview #status {
+    font-weight: bold;
+    font-size: .85rem;
+    color: #2E1760
+}
+
+.dropdown-content {
+    display: none;
+}
+
+/* footer */
+
+body > footer {
+    grid-area: 3 / 1 / span 1 / span 2;
+    background-color: var(--header-root-color);
+    color: white;
+
+    padding: 1em;
+
+    height: 1em;
+    margin-top: auto;
+}
+
+body > footer p {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+}

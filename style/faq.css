@@ -1,0 +1,77 @@
+:root {
+    --box-color: #DEE2FF;
+    --text-color: #2c1c6d;
+    --text-color-2: #DEE2FF;
+}
+  
+#questions {
+    grid-column: 1 / span 2;
+    grid-row: 2 / 3;
+    width: 60%;
+    margin: 1em auto;
+}
+
+#questions > a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    background-color: var(--header-root-color);
+    margin: 0.5em 0.5em 0.5em auto;
+    width: fit-content;
+    padding: 0.7em;
+    font-weight: bolder;
+    border-radius: 10px;
+    justify-self: end;
+}
+
+.question {
+    background-color: var(--ticket-box-color);
+}
+
+.question .dropdown-button > h3 {
+    padding: 1em 10em 1em .8em;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.question .dropdown-button {
+    cursor: pointer;
+    display: flex;
+    background-color: var(--text-color);
+    color: white;
+    align-items: center;
+    position: relative;
+}
+
+.question .dropdown-button .open, .question .dropdown-button .close {
+    position: absolute;
+    right: 0;
+    padding: 0 1.4em;
+    margin-left: auto;
+    font-size: 1.2rem;
+}
+
+.question .dropdown-content {
+    padding: 1em;
+}
+
+.question .dropdown-content > p {
+    margin: 0;
+}
+
+.delete-faq {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-faq a {
+    background-color: indianred;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.delete-faq a:hover {
+    background-color: red;
+}

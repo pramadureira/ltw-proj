@@ -1,0 +1,143 @@
+:root {
+
+    --box-color: #DEE2FF;
+    --text-color: #2c1c6d;
+    --text-color-2: #DEE2FF;
+}
+
+section#login, section#register {
+    grid-area: 2 / 1 / span 1 / span 2;
+    background-color: var(--box-color);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 2em auto;
+}
+
+section#login {
+    width: 25em;
+}
+
+section#login h1, section#register h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+section#login span.error, section#register span.error {
+    font-size: 1rem;
+    color: red;
+}
+
+section#login form {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 2em;
+}
+
+section#login input, section#register #user_info input {
+    width: 100%;
+    height: 2em;
+    margin-top: 1em;
+    background-color: var(--box-color);
+    border: none;
+    outline: none;
+    border-bottom: solid var(--text-color) 1px;
+}
+
+section#login button, section#register button {
+    width: 5em;
+    height: 2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: var(--text-color);
+    color: white;
+    font-size: 1rem;
+    align-self: flex-end;
+    margin-right: 1.5em;
+    cursor: pointer;
+}
+
+section#login #not_registered, section#register #already_registered {
+    font-size: 1rem;
+    display: table;
+    margin: 2em auto;
+}
+
+section#login #not_registered a {
+    color: var(--text-color);
+}
+
+section#register {
+    max-width: 40em;
+}
+
+section#register form {
+    display: grid;
+    grid-template-columns: [start] 35% [mid] 65% [end];
+}
+
+section#register form > label:first-child{
+    grid-column: start / mid;
+    height: min-content;
+    align-self: center;
+}
+
+section#register input[type="file"]{
+    visibility: hidden;
+}
+
+section#register img {
+    width: 80%;
+    height: auto;
+    filter: invert(10%) sepia(62%) saturate(3291%) hue-rotate(245deg) brightness(100%) contrast(99%);
+}
+
+section#register #user_info{
+    grid-column: mid / end;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 1em;
+}
+
+section#register button {
+    grid-column: mid / end;
+    justify-self: end;
+    margin: 1em 1.5em 0 0;
+}
+
+@media (max-width: 47em){
+    section#register {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 30em){
+    section#login {
+        max-width: 85%;
+    }
+
+    section#register {
+        min-width: 85%;
+    }
+
+    section#register img {
+        width: 6rem;
+    }
+
+    section#register #user_info{
+        grid-column: start / end;
+    }
+
+    section#register form > label:first-child{
+        grid-column: start / end;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section#register input[type="file"]{
+        height: 0;
+    }
+}

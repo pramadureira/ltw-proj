@@ -1,0 +1,161 @@
+:root {
+    --box-color: #DEE2FF;
+    --text-color: #DEE2FF;
+    --ticket-box-color: #f2e4fd;
+    --text-color-2: #DEE2FF;
+    --header-root-color: #4111a8;
+}
+
+section.userprofile {
+    grid-area: 2/1/span 1/span 2;
+    grid-template-columns: auto auto;
+    padding: 3em;
+    height: fit-content;
+    justify-self: center;
+    margin: 2em auto;
+    max-width: 50em;
+    width: 60vw;
+    border-radius: 5px;
+    background-color: var(--ticket-box-color);
+}
+
+section.userprofile > form {
+    display: grid;
+    column-gap: .5em;
+    row-gap: 1em;
+}
+
+section.userprofile > h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+section.userprofile form label {
+    display: flex;
+    flex-direction: column;
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+section.userprofile form label input {
+    margin-top: .3em;
+    padding: .4em 0 .4em .3em;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.618);
+}
+
+section.userprofile form #name {
+    grid-area: 1 / 1;
+}
+
+section.userprofile form #username {
+    grid-area: 1 / 2;
+}
+
+section.userprofile form #email {
+    grid-area: 2 / 1 / span 1 / span 2;
+}
+
+section.userprofile form #newpassword {
+    grid-area: 3 / 1;
+}
+
+section.userprofile form #repeatpassword {
+    grid-area: 3 / 2;
+}
+
+section.userprofile form div#photo {
+    grid-area: 4 / 1 / span 1 / span 2;
+    width: 8em;
+    height: 8em;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+section.userprofile form div#photo:hover label#newphoto {
+    position: relative;
+    bottom: 4em;
+    background-color: var(--text-color);
+    
+    
+    height: 3em;
+    padding-top: .8em;
+    text-align: center;
+    font-size: .6rem;
+    color: white;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+
+section.userprofile form div#photo img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+section.userprofile form div#photo input {
+    display: none;
+}
+
+section.userprofile form button {
+    grid-area: 5 / 1 / span 1 / span 2;
+    width: 10em;
+    color: white;
+    background-color: var(--header-root-color);
+    border: none;
+    padding: .6em;
+    justify-self: right;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+@media (max-width: 30em) {
+    section.userprofile form div#photo label#newphoto {
+        position: relative;
+        bottom: 4em;
+        background-color: var(--text-color);
+        
+        
+        height: 3em;
+        padding-top: .8em;
+        text-align: center;
+        font-size: .6rem;
+        color: white;
+        cursor: pointer;
+        font-weight: normal;
+    }
+}
+
+@media (max-width: 55em) {
+    section.userprofile form #name {
+        grid-area: 1 / 1;
+    }
+    
+    section.userprofile form #username {
+        grid-area: 2 / 1;
+    }
+    
+    section.userprofile form #email {
+        grid-area: 3 / 1;
+    }
+    
+    section.userprofile form #newpassword {
+        grid-area: 4 / 1;
+    }
+    
+    section.userprofile form #repeatpassword {
+        grid-area: 5 / 1;
+    }
+    
+    section.userprofile form div#photo {
+        grid-area: 6 / 1;
+    }
+    
+    section.userprofile form button {
+        grid-area: 7 / 1;
+        justify-self: center;
+    }
+}

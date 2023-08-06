@@ -1,0 +1,268 @@
+:root {
+    --box-color: #DEE2FF;
+    --text-color: #2c1c6d;
+    --ticket-box-color: #f2e4fd;
+    --text-color-2: #2E1760;
+}
+
+section#management {
+    grid-area: 2/1/span 1/span 2;
+    width: 98vw;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: min-content auto;
+    column-gap: 1em;
+}
+
+section#management #add-status, #add-department, #add-htag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+section#management > aside {
+    margin-top: .8em;
+    grid-area: 1/2/span 1/span 2;
+    width: 15em;
+}
+
+section#management > aside button {
+    border: none;
+    min-height: 2em;
+    border-radius: 0.5em;
+    background-color: var(--box-color);
+    color: var(--text-color);
+    margin: .2em;
+    cursor: pointer;
+}
+
+#chartContainer {
+    margin-top: .5em;
+    height: fit-content;
+    max-width: 14em;
+}
+
+section#management > aside img {
+    cursor: pointer;
+    margin-left: .2em;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50%;
+    filter: invert(15%) sepia(42%) saturate(3731%) hue-rotate(247deg) brightness(114%) contrast(128%);
+}
+
+section#management > aside h2 {
+    cursor: pointer;
+    background-color: var(--ticket-box-color);
+    color: var(--text-color);
+    font-size: .8rem;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+section#management .dropdown-button .open {
+    position: absolute;
+    right: 0;
+    padding: 0 1.4em;
+    margin-left: auto;
+    font-size: 1.2rem;
+}
+
+section#management > aside ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+section#management input {
+    width: 65%;
+    background-color: var(--box-color);
+    height: 1.4em;
+    padding: .2em .5em;
+    margin: .2em;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    min-width: 0;
+}
+
+section#form-manage-users {
+    grid-area: 1/1;
+    width: 80vw;
+    margin-left: 1em;
+    max-width: 50em;
+}
+
+table#manage-users {
+    width: 100%;
+    height: fit-content;
+    border-spacing: 0 1em;
+}
+
+#manage-users th {
+    padding: .5em;
+    text-align: left;
+    color: var(--text-color-2);
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+#manage-users th:nth-child(1) {
+    width: 30%;
+}
+
+#manage-users th:nth-child(2) {
+    width: 25%;
+}
+
+#manage-users th:nth-child(3) {
+    width: 45%;
+}
+
+#manage-users td {
+    text-align: left;
+    padding: 10px;
+    background-color: var(--ticket-box-color);
+    color: var(--text-color-2);
+    font-size: .8rem;
+}
+
+#manage-users thead tr th {
+    padding-left: 1em;
+}
+
+#manage-users tbody > td:first-child {
+    width: 100%;
+}
+
+#manage-users tbody tr {
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.182);
+}
+
+#manage-users td div.user_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#manage-users td div.user_info img {
+    border-radius: 50%;
+    width: 3.5em;
+    height: 3.5em;
+    margin-right: .8em;
+}
+
+#manage-users td div.user_info .username p {
+    margin: 0;
+    padding: 0;
+}
+
+#manage-users td div.user_info .username > p:nth-child(1) {
+    font-size: .9rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#manage-users td div.user_info .username > p:nth-child(2) {
+    font-size: .65rem;
+    margin-top: .2em;
+    color: var(--text-color-2);
+}
+
+#manage-users td select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--box-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: .65rem;
+    border-radius: 6px;
+    width: 12em;
+    text-align: center;
+    border: none;
+    padding: .7em;
+}
+
+#manage-users td div.departments {
+    display: flex;
+    align-items: center;
+}
+
+#manage-users td div.departments select {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+}
+
+#manage-users td div.departments ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+#manage-users td div.departments ul > li, section#management > aside li {
+    background-color: var(--box-color);
+    color: var(--text-color);
+    font-size: .65rem;
+    padding: .3em .5em;
+    border-radius: 4px;
+    margin-right: .2em;
+    margin-top: .2em;
+    cursor: pointer;
+}
+
+section#management > aside li {
+    cursor: auto;
+}
+
+@media (max-width: 68em) {
+    section#management {
+        width: 100%;
+        grid-template-columns: 98%;
+        grid-template-rows: min-content auto;
+    }
+
+    #chartContainer {
+        max-width: 18em;
+        margin: 0 auto;
+    }
+    
+    section#management > aside {
+        grid-area: 1 / 1;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 30em;
+    }
+
+    section#management input {
+        width: 100%;
+    }
+
+    section#form-manage-users {
+        grid-area: 2 / 1;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #manage-users th {
+        width: auto;
+    }
+    
+    #manage-users td {
+        padding: .2em;
+    }
+
+    #manage-users td select {
+        width: 80%;
+        max-width: 12em;
+    }
+}

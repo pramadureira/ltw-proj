@@ -1,0 +1,182 @@
+:root {
+    --box-color: #DEE2FF;
+    --text-color: #DEE2FF;
+    --ticket-box-color: #f2e4fd;
+    --text-color-2: #2E1760;
+    --header-root-color: #4111a8;
+}
+
+section.create_ticket {
+    grid-area: 2/1/span 1/span 2;
+    grid-template-columns: auto auto;
+    padding: 3em;
+    height: fit-content;
+    justify-self: center;
+    margin: 2em auto;
+    max-width: 50em;
+    width: 60vw;
+    border-radius: 5px;
+    background-color: var(--ticket-box-color);
+}
+
+section.create_ticket span.error {
+    font-size: 1rem;
+    color: red;
+}
+
+section.create_ticket > form {
+    display: grid;
+    column-gap: .5em;
+    row-gap: 1em;
+}
+
+section.create_ticket > h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+section.create_ticket form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+section.create_ticket form label select {
+    margin-top: .3em;
+    padding: .4em 0 .4em .3em;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.618);
+}
+
+section.create_ticket form label textarea, section.create_ticket form label input {
+    margin-top: .3em;
+    padding: .4em 0 .4em .3em;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.618);
+}
+
+section.create_ticket form #ticket_title input {
+    width: 100%;
+    height: 1em;
+    font-size: 1.5rem;
+}
+
+section.create_ticket datalist#ticket_priority_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*Chrome*/
+section.create_ticket form #ticket_priority input[type="range"] {
+    overflow: hidden;
+    -webkit-appearance: none;
+}
+  
+section.create_ticket form #ticket_priority input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 100%;
+}
+
+section.create_ticket form #ticket_priority #low_priority::-webkit-slider-thumb{
+    box-shadow: -80px 0 0 80px green;
+}
+
+section.create_ticket form #ticket_priority #medium_priority::-webkit-slider-thumb{
+    box-shadow: -80px 0 0 80px yellow;
+}
+
+section.create_ticket form #ticket_priority #high_priority::-webkit-slider-thumb{
+    box-shadow: -80px 0 0 80px red;
+}
+/********/
+
+/*Firefox*/
+section.create_ticket form #ticket_priority #low_priority::-moz-range-progress, 
+    section.create_ticket form #ticket_priority #low_priority::-moz-range-thumb {
+    background-color: green;
+    height: 200%;
+}
+
+section.create_ticket form #ticket_priority #medium_priority::-moz-range-progress,
+    section.create_ticket form #ticket_priority #medium_priority::-moz-range-thumb { 
+    background-color: yellow;
+    height: 200%;
+}
+
+section.create_ticket form #ticket_priority #high_priority::-moz-range-progress,
+    section.create_ticket form #ticket_priority #high_priority::-moz-range-thumb{ 
+    background-color: red;
+    height: 200%;
+}
+/*********/
+
+.create_ticket div#tags {
+    display: grid;
+    grid-template-rows: auto min-content;
+    grid-template-columns: min-content min-content 100%;
+}
+
+.create_ticket div#tags input {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    display: inline-block;
+}
+
+.create_ticket div#tags img {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+}
+
+.create_ticket div#tags ul {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 3;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.create_ticket div#tags ul > li {
+    cursor: pointer;
+}
+
+section.create_ticket form label textarea {
+    resize: vertical;
+}
+
+section.create_ticket form #ticket_title {
+    grid-area: 1 / 1;
+}
+
+section.create_ticket form #department {
+    grid-area: 2 / 1;
+}
+
+section.create_ticket form #ticket_priority {
+    grid-area: 3 / 1;
+    width: 15em;
+}
+
+section.create_ticket form #tags {
+    grid-area: 4 / 1;
+    width: 15em;
+}
+
+section.create_ticket form #ticket_description {
+    grid-area: 5 / 1;
+}
+
+section.create_ticket form button {
+    grid-area: 6 / 1 / span 1 / span 1;
+    width: 10em;
+    color: white;
+    background-color: var(--header-root-color);
+    border: none;
+    padding: .6em;
+    justify-self: right;
+    cursor: pointer;
+    border-radius: 3px;
+}
